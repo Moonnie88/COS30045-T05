@@ -1,6 +1,6 @@
 # COS30045 – T05: Four D3 Charts on One Page
 
-**Live demo:** _(add the Vercel link here once deployed)_
+**Live demo:** [https://cos30045-t05-ivory.vercel.app/](https://cos30045-t05-ivory.vercel.app/)
 
 Run it locally with VS Code **Live Server** (Go Live). `d3.csv()` cannot load the CSV files when `index.html` is opened by double-clicking.
 
@@ -51,7 +51,7 @@ All four files were provided with COS30045 Exercise 5.
 
 ### Data notes
 
-- **Source:** _(add the original source given in the Exercise 5 brief)_.
+- **Source:** the four CSV files were provided by my COS30045 tutor for Exercise 5.
 - **"LED" vs "LCD (LED)":** the two summary files call LED-backlit LCD TVs `LED`, while `Ex5_TV_energy.csv` calls them `LCD (LED)`. They are the same technology; the charts label them "LED".
 - **Rows are groups, not single TVs:** each row of `Ex5_TV_energy.csv` is one brand + screen technology + screen size. `count` is how many models were combined into that row (3,703 models in total), and `energy_consumpt` is their average.
 - **`star2` is averaged:** because rows combine several models, star ratings are averages such as 4.05, not whole or half stars. They range from 2 to 8.
