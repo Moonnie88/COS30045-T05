@@ -7,6 +7,11 @@
     --brown: #7b6344;       /* outline */
     --brown-dark: #5a4630;
     --white: #ffffff;
+
+    /* One colour per screen technology, used by every chart so LCD/LED/OLED always match */
+    --tech-lcd: #7b6344;    /* brown */
+    --tech-led: #eca843;    /* orange */
+    --tech-oled: #2f7f8a;   /* teal */
 }
 
 * {
@@ -165,6 +170,67 @@ h2 {
 
 .chart-container svg {
     display: block;                 /* removes the small gap under inline SVGs */
+}
+
+/* Parts of the D3 charts (drawn by the js/*-chart.js files) */
+.axis {
+    color: var(--brown);            /* D3 draws axis lines and tick labels in currentColor */
+    font-size: 13px;
+}
+
+.axis-title {
+    fill: var(--brown-dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Screen technology colours (bars, and later the scatter dots and donut slices) */
+.tech-lcd  { fill: var(--tech-lcd); }
+.tech-led  { fill: var(--tech-led); }
+.tech-oled { fill: var(--tech-oled); }
+
+.bar {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+/* Mouse-over feedback */
+.bar:hover {
+    opacity: 0.8;
+}
+
+/* Clicked bar: dark outline */
+.bar.selected {
+    stroke: var(--brown-dark);
+    stroke-width: 3px;
+}
+
+.bar:focus-visible {
+    outline: none;
+    stroke: var(--brown-dark);
+    stroke-width: 3px;
+    stroke-dasharray: 4 3;
+}
+
+/* The other bars and their numbers fade out (placed after :hover so it wins) */
+.bar.dimmed,
+.bar-value.dimmed {
+    opacity: 0.2;
+}
+
+.bar-value {
+    fill: var(--brown-dark);
+    font-size: 14px;
+    font-weight: 700;
+    transition: opacity 0.2s;
+}
+
+/* Comparison text under the bar chart */
+.chart-message {
+    min-height: 1.6em;              /* keeps the space so the page doesn't jump when the text changes */
+    margin-top: 8px;
+    font-weight: 600;
+    color: var(--brown-dark);
 }
 
 .chart-caption {

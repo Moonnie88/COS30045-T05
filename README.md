@@ -18,7 +18,7 @@ about.html            – About Us page
 css/styles.css        – site styles (colours from the power logo); .chart-grid is 2 columns on wide screens, 1 on narrow
 js/script.js          – builds the shared nav menu and footer, highlights the current page
 js/line-chart.js      – line chart (to do)
-js/bar-chart.js       – bar chart (to do)
+js/bar-chart.js       – bar chart: loads the 55" CSV, draws bars, axes and value labels, redraws on resize
 js/scatter-chart.js   – scatter plot (to do)
 js/donut-chart.js     – donut chart (to do)
 data/                 – the CSV files provided with Exercise 5
@@ -66,6 +66,8 @@ All four files were provided with COS30045 Exercise 5.
 |---------------|-------------|----------------------------------|--------------------------------|
 |27/10/2026     | Claude Code | - describe the Exercise 5 CSV files; suggest a page layout and best-practice chart choices | - chose the donut to show the share of models (not mean energy) and redraw-on-resize with `ResizeObserver` |
 |27/10/2026     | Claude Code | - make the repo T05 only: remove the T04 files, Televisions page and KNIME images; set up the four-chart layout, intro and conclusion; rewrite the README and About page | - checked the page layout on a wide and a narrow window and the link to my T03 site |
+|27/10/2026     | Claude Code | - bar chart: add `bar-chart.js` (load the 55" CSV, band and linear scales, axes with units, value labels, OLED highlighted, redraw with `ResizeObserver`); explain each step | - checked the values against the CSV (326, 330, 387) and that the chart redraws when the window is resized |
+|27/10/2026     | Claude Code | - bar chart: give each screen technology its own colour; click a bar to highlight it, fade the others and show how much more or less it uses than the others | - asked for the colours and the click comparison myself; checked the differences against the bar values and that the selection stays after resizing |
 
 ### Reflection
 

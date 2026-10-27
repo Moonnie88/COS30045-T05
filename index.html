@@ -40,6 +40,8 @@
             <section class="chart-block">
                 <h2>At 55", OLED TVs use about 60 kWh more a year than LCD or LED</h2>
                 <div id="bar-chart" class="chart-container"></div>
+                <!-- Filled in by js/bar-chart.js when a bar is clicked; aria-live makes screen readers read the change -->
+                <p id="bar-comparison" class="chart-message" aria-live="polite"></p>
                 <p class="chart-caption">
                     Mean labelled energy use of 55-inch TVs by screen technology. Comparing one size only
                     takes screen size out of the picture, so the difference comes from the technology itself.
@@ -99,5 +101,6 @@
     <!-- D3 library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Chart files are added here one at a time as each chart is built -->
+    <script src="js/bar-chart.js"></script>
 </body>
 </html>
