@@ -15,7 +15,7 @@ Every chart resizes with the browser window, and follows good data visualisation
 ```
 index.html            – Home page: intro, the four charts in a grid, conclusion linking to my T03 site
 about.html            – About Us page
-css/styles.css        – site styles (colours from the power logo); .chart-grid is 2 columns on wide screens, 1 on narrow
+css/styles.css        – site styles (colours from the power logo); .chart-grid stacks the charts one per row
 js/script.js          – builds the shared nav menu and footer, highlights the current page
 js/line-chart.js      – line chart: average price line; region checkboxes, "show all" and year menu; click a year to compare regions
 js/bar-chart.js       – bar chart: loads the 55" CSV, draws bars, axes and value labels, redraws on resize
