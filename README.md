@@ -75,6 +75,7 @@ All four files were provided with COS30045 Exercise 5.
 |27/10/2026     | Claude Code | - donut chart: add `donut-chart.js` (share of models by screen technology in the same colours, total in the centre, screen-size buttons like the scatter plot, click a slice or legend item to see its share) | - checked the shares against the CSV (all sizes: LED 84.5%, LCD 8.6%, OLED 6.9%; no OLED up to 32") |
 |27/10/2026     | Claude Code | - donut chart: compare it with the task brief; add the brief's "average energy use, all TVs" view from `Ex5_TV_energy_Allsizes_byScreenType.csv` as the default, keep "share of models" as a second view, and update the README | - I noticed the donut did not match the brief (energy, not model counts) and chose to keep both views; checked the energy values (306, 356, 533) against the CSV |
 |27/10/2026     | Claude Code | - review the conclusion wording; rewrite it so each recommendation points to a chart and a number, in the site's voice | - agreed to the rewrite; checked the numbers (all TVs up to 32" under 200 kWh, the 17 groups over 1,000 kWh are all 75" or larger) |
+|27/10/2026     | Claude Code | - line chart: remove the $41.50 / $132.50 labels and dots at the ends of the average line | - asked for this myself: the labels sat too close to the line and could be misread; the hover tooltip and year comparison still give exact values |
 
 ### Reflection
 

@@ -243,14 +243,12 @@ h2 {
     stroke-width: 3px;
 }
 
-.line-label,
-.end-value {
+.line-label {
     fill: var(--brown-dark);
     font-size: 13px;
     font-weight: 700;
 }
 
-.end-point,
 .hover-dot {
     fill: var(--brown-dark);
     stroke: var(--white);

@@ -235,7 +235,6 @@ function drawLineChart(data, width, redraw) {
         .style("stroke", r => r.colour)
         .attr("d", r => lineFor(r.name)(data));
 
-    const first = data[0];
     const last = data[data.length - 1];
 
     if (showAverage) {
@@ -251,27 +250,7 @@ function drawLineChart(data, width, redraw) {
             .text("Average");
     }
 
-    // 6. All years: mark the first and last average values (they back up the "tripled" title)
-    if (showAverage && selectedYear === null) {
-        chart.selectAll(".end-point")
-            .data([first, last])
-            .join("circle")
-            .attr("class", "end-point")
-            .attr("cx", d => xScale(d.year))
-            .attr("cy", d => yScale(d.average))
-            .attr("r", 4);
-
-        chart.selectAll(".end-value")
-            .data([first, last])
-            .join("text")
-            .attr("class", "end-value")
-            .attr("x", d => xScale(d.year))
-            .attr("y", d => yScale(d.average) - 10)
-            .attr("text-anchor", (d, i) => i === 0 ? "start" : "end")   // keep both labels inside the chart
-            .text(d => formatPrice(d.average));
-    }
-
-    // 7. One year chosen: a guide line and a dot for each region being compared (no average dot)
+    // 6. One year chosen: a guide line and a dot for each region being compared (no average dot)
     if (selectedYear !== null) {
         const d = data.find(row => row.year === selectedYear);
         const x = xScale(selectedYear);
@@ -293,7 +272,7 @@ function drawLineChart(data, width, redraw) {
             .style("fill", r => r.colour);
     }
 
-    // 8. Hover and click: an invisible rectangle over the plot area catches the mouse (and touch)
+    // 7. Hover and click: an invisible rectangle over the plot area catches the mouse (and touch)
     const hoverLine = chart.append("line")
         .attr("class", "hover-line")
         .attr("y1", 0)
@@ -359,7 +338,7 @@ function drawLineChart(data, width, redraw) {
             redraw();
         });
 
-    // 9. Text under the chart, and keep the controls in step with the chart
+    // 8. Text under the chart, and keep the controls in step with the chart
     showYearReadout(data);
     syncLineControls();
 }
