@@ -225,6 +225,66 @@ h2 {
     transition: opacity 0.2s;
 }
 
+/* Light gridlines (the y-axis ticks stretched across the chart) */
+.grid .tick line {
+    stroke: var(--cream);
+}
+
+/* Line chart */
+.line-state {
+    fill: none;
+    stroke: #cbbfa9;                /* light grey-brown: context, not the main message */
+    stroke-width: 1.5px;
+}
+
+.line-average {
+    fill: none;
+    stroke: var(--brown-dark);
+    stroke-width: 3px;
+}
+
+.line-label,
+.end-value {
+    fill: var(--brown-dark);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.end-point,
+.hover-dot {
+    fill: var(--brown-dark);
+    stroke: var(--white);
+    stroke-width: 2px;
+}
+
+.hover-line {
+    stroke: var(--brown);
+    stroke-dasharray: 4 3;
+}
+
+.hover-area {
+    fill: transparent;              /* invisible, but still catches the mouse */
+    cursor: crosshair;
+}
+
+/* Tooltip box inside a chart container (positioned by the chart's JS) */
+.chart-container {
+    position: relative;
+}
+
+.chart-tooltip {
+    position: absolute;
+    padding: 6px 10px;
+    background-color: var(--brown-dark);
+    color: var(--cream);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    white-space: nowrap;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    pointer-events: none;           /* the mouse passes through it */
+}
+
 /* Comparison text under the bar chart */
 .chart-message {
     min-height: 1.6em;              /* keeps the space so the page doesn't jump when the text changes */

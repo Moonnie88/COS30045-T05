@@ -17,7 +17,7 @@ index.html            – Home page: intro, the four charts in a grid, conclusio
 about.html            – About Us page
 css/styles.css        – site styles (colours from the power logo); .chart-grid is 2 columns on wide screens, 1 on narrow
 js/script.js          – builds the shared nav menu and footer, highlights the current page
-js/line-chart.js      – line chart (to do)
+js/line-chart.js      – line chart: average price line over grey state lines, first/last values labelled, hover tooltip per year
 js/bar-chart.js       – bar chart: loads the 55" CSV, draws bars, axes and value labels, redraws on resize
 js/scatter-chart.js   – scatter plot (to do)
 js/donut-chart.js     – donut chart (to do)
@@ -68,7 +68,9 @@ All four files were provided with COS30045 Exercise 5.
 |27/10/2026     | Claude Code | - make the repo T05 only: remove the T04 files, Televisions page and KNIME images; set up the four-chart layout, intro and conclusion; rewrite the README and About page | - checked the page layout on a wide and a narrow window and the link to my T03 site |
 |27/10/2026     | Claude Code | - bar chart: add `bar-chart.js` (load the 55" CSV, band and linear scales, axes with units, value labels, OLED highlighted, redraw with `ResizeObserver`); explain each step | - checked the values against the CSV (326, 330, 387) and that the chart redraws when the window is resized |
 |27/10/2026     | Claude Code | - bar chart: give each screen technology its own colour; click a bar to highlight it, fade the others and show how much more or less it uses than the others | - asked for the colours and the click comparison myself; checked the differences against the bar values and that the selection stays after resizing |
+|27/10/2026     | Claude Code | - line chart: add `line-chart.js` (average price line over thin grey state lines, y axis from $0, light gridlines, first and last values labelled, hover tooltip with each year's prices); explain each step | - checked the 1998 and 2024 values ($41.50, $132.50) and a few tooltip years against the CSV, and the resize |
 
 ### Reflection
 
 <!-- Write a short reflection: how helpful was the tool, what did it get wrong, what did you learn? -->
+AI tools still do some mistake in design such as using the same colours for the chart like the bar chart or the line chart. It focused more on the data showing but not user friendly design. Data are there but the design and visualization is more towards a simple design. I have learnt to not mainly following with what was given but test it in the first place and change it accordingly. Other than that, AI tool does not know what user want and I act as one and think more on humanly side on what feels like easy to use and understand.
