@@ -368,6 +368,77 @@ h2 {
     cursor: pointer;
 }
 
+/* Donut chart */
+.slice {
+    stroke: var(--white);
+    stroke-width: 2px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+/* Mouse-over feedback */
+.slice:hover {
+    opacity: 0.85;
+}
+
+/* Placed after :hover so it wins */
+.slice.dimmed {
+    opacity: 0.25;
+}
+
+.donut-centre-value {
+    fill: var(--brown-dark);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.donut-centre-label {
+    fill: var(--brown);
+    font-size: 13px;
+}
+
+#donut-note {
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.donut-legend {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 10px;
+    margin-top: 12px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    font: inherit;
+    font-size: 0.9rem;
+    color: var(--brown-dark);
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+/* Mouse-over feedback */
+.legend-item:hover {
+    background-color: var(--cream-light);
+}
+
+.legend-item.selected {
+    border-color: var(--brown);
+}
+
+.legend-item.dimmed {
+    opacity: 0.45;
+}
+
 /* Shown in the line chart when no line is ticked */
 .empty-message {
     fill: var(--brown);

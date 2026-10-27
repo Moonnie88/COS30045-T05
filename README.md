@@ -20,7 +20,7 @@ js/script.js          – builds the shared nav menu and footer, highlights the 
 js/line-chart.js      – line chart: average price line; region checkboxes, "show all" and year menu; click a year to compare regions
 js/bar-chart.js       – bar chart: loads the 55" CSV, draws bars, axes and value labels, redraws on resize
 js/scatter-chart.js   – scatter plot: dots coloured by screen tech; screen-size buttons and tech checkboxes; hover tooltip
-js/donut-chart.js     – donut chart (to do)
+js/donut-chart.js     – donut chart: average energy by screen tech (default) or share of models with size buttons; click a slice or legend item
 data/                 – the CSV files provided with Exercise 5
 images/PowerIcon.png  – logo and favicon
 ```
@@ -34,9 +34,9 @@ The charts appear in story order: power is getting more expensive → screen tec
 | 1 | Line | `Ex5_ARE_Spot_Prices.csv` | Average yearly spot power price, 1998–2024 ($ per MWh) |
 | 2 | Bar | `Ex5_TV_energy_55inchtv_byScreenType.csv` | Mean energy use of 55" TVs by screen technology (kWh per year) |
 | 3 | Scatter | `Ex5_TV_energy.csv` | Energy use (kWh per year) against star rating |
-| 4 | Donut | `Ex5_TV_energy.csv` | Share of TV models by screen technology |
+| 4 | Donut | `Ex5_TV_energy_Allsizes_byScreenType.csv` and `Ex5_TV_energy.csv` | Average energy use by screen technology, all TVs (kWh per year), with a second view for the share of TV models |
 
-**Why the donut shows models, not energy:** a donut shows parts of a whole. The mean energy figures in `Ex5_TV_energy_Allsizes_byScreenType.csv` (LCD 306, LED 356, OLED 533 kWh/year) are averages, so they do not add up to a meaningful whole, and a slice would wrongly suggest OLED is "45% of" something. Counting models per technology does make a whole (all registered TVs), so the donut answers "what will I mostly find in the shop?", and the bar chart compares energy use.
+**Why the donut has two views:** the brief asks for the donut to show energy consumption by screen technology across all TVs, so that is the default view (LCD 306, LED 356, OLED 533 kWh/year). These are averages, so they do not add up to a meaningful whole: the slices only compare the three values, and the chart labels them in kWh, not as percentages, so OLED is not read as "45% of" something. The **Share of models** view is a true part-to-whole (all registered TVs), and answers "what will I mostly find in the shop?". The all-sizes averages also show why the bar chart uses 55" TVs only: OLED TVs tend to be larger, so across all sizes OLED looks 177 kWh worse than LED, but at 55" the gap is 57 kWh.
 
 ## Data files
 
@@ -72,6 +72,9 @@ All four files were provided with COS30045 Exercise 5.
 |27/10/2026     | Claude Code | - line chart: start with the average line only; add region checkboxes (one colour each, more than one at a time), "Show all regions" and "Average only" buttons and a year menu; click a year to show every region's value in that year | - suggested these changes myself because the grey lines were confusing and showed too much at once; checked the region values for a few years against the CSV |
 |27/10/2026     | Claude Code | - line chart: add an Average checkbox to hide the average line; when regions are ticked, a chosen year lists only those regions under the hint text; hover shows every line that is switched on | - asked for both changes myself; checked the readout with two regions ticked and with the average hidden |
 |27/10/2026     | Claude Code | - scatter plot: add `scatter-chart.js` (stars vs energy, dots in the bar chart's technology colours, screen-size buttons, technology checkboxes, hover tooltip); check whether the pattern is clearer within one screen size | - kept the screen-size filter because the correlation is much stronger within a size group (about −0.7 to −0.8) than for all sizes (−0.47), which matches my T03 advice to compare stars within a size; changed the title to say so |
+|27/10/2026     | Claude Code | - donut chart: add `donut-chart.js` (share of models by screen technology in the same colours, total in the centre, screen-size buttons like the scatter plot, click a slice or legend item to see its share) | - checked the shares against the CSV (all sizes: LED 84.5%, LCD 8.6%, OLED 6.9%; no OLED up to 32") |
+|27/10/2026     | Claude Code | - donut chart: compare it with the task brief; add the brief's "average energy use, all TVs" view from `Ex5_TV_energy_Allsizes_byScreenType.csv` as the default, keep "share of models" as a second view, and update the README | - I noticed the donut did not match the brief (energy, not model counts) and chose to keep both views; checked the energy values (306, 356, 533) against the CSV |
+|27/10/2026     | Claude Code | - review the conclusion wording; rewrite it so each recommendation points to a chart and a number, in the site's voice | - agreed to the rewrite; checked the numbers (all TVs up to 32" under 200 kWh, the 17 groups over 1,000 kWh are all 75" or larger) |
 
 ### Reflection
 
