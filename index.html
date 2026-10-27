@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerWise | Home</title>
+    <link rel="icon" href="images/PowerIcon.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+
+    <!-- Navigation menu is added here by js/script.js -->
+    <header id="site-header"></header>
+
+    <main>
+        <h1>Choosing an energy-efficient TV</h1>
+        <p class="intro">
+            Buying a new TV? Its price tag is only part of the cost. Every year it runs, it adds to your
+            electricity bill. These four charts show why running costs matter, and what to look for in
+            the shop.
+        </p>
+
+        <!-- Four charts: 2 columns on wide screens, 1 column on narrow screens.
+             Each chart's JS file draws an SVG inside its .chart-container and redraws it when the window resizes. -->
+        <div class="chart-grid">
+
+            <!-- 1. Line chart (js/line-chart.js) -->
+            <section class="chart-block">
+                <h2>Wholesale power prices have more than tripled since 1998</h2>
+                <div id="line-chart" class="chart-container"></div>
+                <p class="chart-caption">
+                    Average yearly spot price paid for electricity in Queensland, New South Wales, Victoria
+                    and South Australia. Higher wholesale prices flow through to household bills, so a TV's
+                    energy use matters more each year.
+                </p>
+                <p class="chart-source">Data: Ex5_ARE_Spot_Prices.csv (COS30045 Exercise 5).</p>
+            </section>
+
+            <!-- 2. Bar chart (js/bar-chart.js) -->
+            <section class="chart-block">
+                <h2>At 55", OLED TVs use about 60 kWh more a year than LCD or LED</h2>
+                <div id="bar-chart" class="chart-container"></div>
+                <p class="chart-caption">
+                    Mean labelled energy use of 55-inch TVs by screen technology. Comparing one size only
+                    takes screen size out of the picture, so the difference comes from the technology itself.
+                </p>
+                <p class="chart-source">Data: Ex5_TV_energy_55inchtv_byScreenType.csv (COS30045 Exercise 5).</p>
+            </section>
+
+            <!-- 3. Scatter plot (js/scatter-chart.js) -->
+            <section class="chart-block">
+                <h2>TVs with more stars generally use less energy</h2>
+                <div id="scatter-chart" class="chart-container"></div>
+                <p class="chart-caption">
+                    Each dot is a group of models with the same brand, screen technology and size, plotted
+                    by its average star rating and labelled energy use.
+                </p>
+                <p class="chart-source">Data: Ex5_TV_energy.csv (COS30045 Exercise 5).</p>
+            </section>
+
+            <!-- 4. Donut chart (js/donut-chart.js) -->
+            <section class="chart-block">
+                <h2>Most TVs on sale use LED screens</h2>
+                <div id="donut-chart" class="chart-container"></div>
+                <p class="chart-caption">
+                    Share of registered TV models by screen technology. This chart counts models, not energy
+                    use: a donut shows parts of a whole, and average energy figures do not add up to a whole,
+                    so energy by technology is compared in the bar chart instead.
+                </p>
+                <p class="chart-source">Data: Ex5_TV_energy.csv (COS30045 Exercise 5), models counted by screen technology.</p>
+            </section>
+
+        </div>
+
+        <!-- Conclusion: links back to the T03 data story -->
+        <section class="conclusion">
+            <h2>What this means for you</h2>
+            <p>
+                Power is getting more expensive, so a TV's energy use matters for as long as you own it.
+                The recommendations from my TV energy story still hold:
+            </p>
+            <ol>
+                <li><strong>Choose the size you need.</strong> Bigger screens use more energy every year.</li>
+                <li><strong>Compare stars within that size.</strong> More stars means lower running costs.</li>
+                <li><strong>Read the label, not the brand.</strong> Check the kWh per year figure, and expect OLED to use more than LED at the same size.</li>
+            </ol>
+            <p>
+                Read the full story:
+                <a href="https://cos-30045-t03-six.vercel.app/televisions.html" target="_blank" rel="noopener"
+                   data-tooltip="Opens my T03 site in a new tab">Buying a TV? Size Matters More Than You Think</a>
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer is added here by js/script.js -->
+    <footer id="site-footer"></footer>
+
+    <script src="js/script.js"></script>
+    <!-- D3 library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Chart files are added here one at a time as each chart is built -->
+</body>
+</html>
