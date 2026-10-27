@@ -231,10 +231,10 @@ h2 {
 }
 
 /* Line chart */
-.line-state {
+/* Region lines: the colour is set by the JS (one per region) */
+.line-region {
     fill: none;
-    stroke: #cbbfa9;                /* light grey-brown: context, not the main message */
-    stroke-width: 1.5px;
+    stroke-width: 2px;
 }
 
 .line-average {
@@ -264,7 +264,106 @@ h2 {
 
 .hover-area {
     fill: transparent;              /* invisible, but still catches the mouse */
-    cursor: crosshair;
+    cursor: pointer;
+}
+
+/* Chosen year: solid guide line and one dot per region (fill set by the JS) */
+.year-line {
+    stroke: var(--brown-dark);
+    stroke-width: 1.5px;
+}
+
+.year-dot {
+    stroke: var(--white);
+    stroke-width: 2px;
+}
+
+/* ---------- Chart controls (checkboxes, buttons, menus) ---------- */
+.chart-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.region-options,
+.control-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+}
+
+.region-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.region-option input {
+    accent-color: var(--brown);
+    cursor: pointer;
+}
+
+/* Small colour square: legend for a region */
+.swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+.control-button {
+    padding: 4px 12px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--brown-dark);
+    background-color: var(--cream-light);
+    border: 2px solid var(--brown);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Mouse-over feedback */
+.control-button:hover {
+    background-color: var(--orange);
+}
+
+.year-filter select {
+    margin-left: 4px;
+    padding: 3px 6px;
+    font: inherit;
+    color: var(--brown-dark);
+    border: 2px solid var(--brown);
+    border-radius: 6px;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+/* Shown in the line chart when no line is ticked */
+.empty-message {
+    fill: var(--brown);
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Instruction line above the chosen year's values */
+.readout-hint {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Region values for the chosen year, under the line chart */
+.readout-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: 10px;
+    white-space: nowrap;
 }
 
 /* Tooltip box inside a chart container (positioned by the chart's JS) */

@@ -27,12 +27,28 @@
             <!-- 1. Line chart (js/line-chart.js) -->
             <section class="chart-block">
                 <h2>Wholesale power prices have more than tripled since 1998</h2>
+                <!-- Controls: the region checkboxes and year options are added by js/line-chart.js -->
+                <div id="line-controls" class="chart-controls">
+                    <div class="region-options" role="group" aria-label="Lines to show"></div>
+                    <div class="control-row">
+                        <button type="button" id="show-all-regions" class="control-button"
+                                data-tooltip="Draw every region's line and the average">Show all regions</button>
+                        <button type="button" id="average-only" class="control-button"
+                                data-tooltip="Hide the region lines">Average only</button>
+                        <label class="year-filter">Year:
+                            <select id="line-year">
+                                <option value="all">All years</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
                 <div id="line-chart" class="chart-container"></div>
+                <!-- Filled in by js/line-chart.js when a year is chosen -->
+                <p id="line-year-readout" class="chart-message" aria-live="polite"></p>
                 <p class="chart-caption">
                     Average yearly spot price paid for electricity in Queensland, New South Wales, Victoria
-                    and South Australia (thin grey lines show each state). Higher wholesale prices flow
+                    and South Australia. Tick a region to add its line. Higher wholesale prices flow
                     through to household bills, so a TV's energy use matters more each year.
-                    Hover over the chart to see each year's prices.
                 </p>
                 <p class="chart-source">Data: Ex5_ARE_Spot_Prices.csv (COS30045 Exercise 5).</p>
             </section>

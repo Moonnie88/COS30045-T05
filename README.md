@@ -17,7 +17,7 @@ index.html            – Home page: intro, the four charts in a grid, conclusio
 about.html            – About Us page
 css/styles.css        – site styles (colours from the power logo); .chart-grid is 2 columns on wide screens, 1 on narrow
 js/script.js          – builds the shared nav menu and footer, highlights the current page
-js/line-chart.js      – line chart: average price line over grey state lines, first/last values labelled, hover tooltip per year
+js/line-chart.js      – line chart: average price line; region checkboxes, "show all" and year menu; click a year to compare regions
 js/bar-chart.js       – bar chart: loads the 55" CSV, draws bars, axes and value labels, redraws on resize
 js/scatter-chart.js   – scatter plot (to do)
 js/donut-chart.js     – donut chart (to do)
@@ -69,6 +69,8 @@ All four files were provided with COS30045 Exercise 5.
 |27/10/2026     | Claude Code | - bar chart: add `bar-chart.js` (load the 55" CSV, band and linear scales, axes with units, value labels, OLED highlighted, redraw with `ResizeObserver`); explain each step | - checked the values against the CSV (326, 330, 387) and that the chart redraws when the window is resized |
 |27/10/2026     | Claude Code | - bar chart: give each screen technology its own colour; click a bar to highlight it, fade the others and show how much more or less it uses than the others | - asked for the colours and the click comparison myself; checked the differences against the bar values and that the selection stays after resizing |
 |27/10/2026     | Claude Code | - line chart: add `line-chart.js` (average price line over thin grey state lines, y axis from $0, light gridlines, first and last values labelled, hover tooltip with each year's prices); explain each step | - checked the 1998 and 2024 values ($41.50, $132.50) and a few tooltip years against the CSV, and the resize |
+|27/10/2026     | Claude Code | - line chart: start with the average line only; add region checkboxes (one colour each, more than one at a time), "Show all regions" and "Average only" buttons and a year menu; click a year to show every region's value in that year | - suggested these changes myself because the grey lines were confusing and showed too much at once; checked the region values for a few years against the CSV |
+|27/10/2026     | Claude Code | - line chart: add an Average checkbox to hide the average line; when regions are ticked, a chosen year lists only those regions under the hint text; hover shows every line that is switched on | - asked for both changes myself; checked the readout with two regions ticked and with the average hidden |
 
 ### Reflection
 
