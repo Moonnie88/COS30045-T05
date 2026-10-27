@@ -68,11 +68,19 @@
 
             <!-- 3. Scatter plot (js/scatter-chart.js) -->
             <section class="chart-block">
-                <h2>TVs with more stars generally use less energy</h2>
+                <h2>Within the same screen size, TVs with more stars use less energy</h2>
+                <!-- Controls: the buttons and checkboxes are added by js/scatter-chart.js -->
+                <div id="scatter-controls" class="chart-controls">
+                    <div class="size-buttons control-row" role="group" aria-label="Screen size"></div>
+                    <div class="tech-options filter-options" role="group" aria-label="Screen technologies to show"></div>
+                </div>
                 <div id="scatter-chart" class="chart-container"></div>
+                <p id="scatter-readout" class="chart-message" aria-live="polite"></p>
                 <p class="chart-caption">
                     Each dot is a group of models with the same brand, screen technology and size, plotted
-                    by its average star rating and labelled energy use.
+                    by its average star rating and labelled energy use. Bigger screens use more energy, which
+                    hides the pattern when all sizes are mixed. Pick one screen size to see that more stars
+                    clearly means lower energy use.
                 </p>
                 <p class="chart-source">Data: Ex5_TV_energy.csv (COS30045 Exercise 5).</p>
             </section>
@@ -120,5 +128,6 @@
     <!-- Chart files are added here one at a time as each chart is built -->
     <script src="js/line-chart.js"></script>
     <script src="js/bar-chart.js"></script>
+    <script src="js/scatter-chart.js"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@ css/styles.css        – site styles (colours from the power logo); .chart-grid
 js/script.js          – builds the shared nav menu and footer, highlights the current page
 js/line-chart.js      – line chart: average price line; region checkboxes, "show all" and year menu; click a year to compare regions
 js/bar-chart.js       – bar chart: loads the 55" CSV, draws bars, axes and value labels, redraws on resize
-js/scatter-chart.js   – scatter plot (to do)
+js/scatter-chart.js   – scatter plot: dots coloured by screen tech; screen-size buttons and tech checkboxes; hover tooltip
 js/donut-chart.js     – donut chart (to do)
 data/                 – the CSV files provided with Exercise 5
 images/PowerIcon.png  – logo and favicon
@@ -71,6 +71,7 @@ All four files were provided with COS30045 Exercise 5.
 |27/10/2026     | Claude Code | - line chart: add `line-chart.js` (average price line over thin grey state lines, y axis from $0, light gridlines, first and last values labelled, hover tooltip with each year's prices); explain each step | - checked the 1998 and 2024 values ($41.50, $132.50) and a few tooltip years against the CSV, and the resize |
 |27/10/2026     | Claude Code | - line chart: start with the average line only; add region checkboxes (one colour each, more than one at a time), "Show all regions" and "Average only" buttons and a year menu; click a year to show every region's value in that year | - suggested these changes myself because the grey lines were confusing and showed too much at once; checked the region values for a few years against the CSV |
 |27/10/2026     | Claude Code | - line chart: add an Average checkbox to hide the average line; when regions are ticked, a chosen year lists only those regions under the hint text; hover shows every line that is switched on | - asked for both changes myself; checked the readout with two regions ticked and with the average hidden |
+|27/10/2026     | Claude Code | - scatter plot: add `scatter-chart.js` (stars vs energy, dots in the bar chart's technology colours, screen-size buttons, technology checkboxes, hover tooltip); check whether the pattern is clearer within one screen size | - kept the screen-size filter because the correlation is much stronger within a size group (about −0.7 to −0.8) than for all sizes (−0.47), which matches my T03 advice to compare stars within a size; changed the title to say so |
 
 ### Reflection
 

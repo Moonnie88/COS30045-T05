@@ -288,6 +288,7 @@ h2 {
 }
 
 .region-options,
+.filter-options,
 .control-row {
     display: flex;
     flex-wrap: wrap;
@@ -295,14 +296,17 @@ h2 {
     gap: 6px 14px;
 }
 
-.region-option {
+/* A checkbox with its colour swatch and name */
+.region-option,
+.filter-option {
     display: flex;
     align-items: center;
     gap: 5px;
     cursor: pointer;
 }
 
-.region-option input {
+.region-option input,
+.filter-option input {
     accent-color: var(--brown);
     cursor: pointer;
 }
@@ -330,6 +334,27 @@ h2 {
 /* Mouse-over feedback */
 .control-button:hover {
     background-color: var(--orange);
+}
+
+/* The chosen option in a group of buttons (e.g. screen size) */
+.control-button.active {
+    background-color: var(--brown);
+    color: var(--cream);
+}
+
+/* Scatter plot dots: colour comes from the tech-* class */
+.dot {
+    fill-opacity: 0.7;              /* overlapping dots show as darker patches */
+    stroke: var(--white);
+    stroke-width: 0.5px;
+    cursor: pointer;
+}
+
+/* Mouse-over feedback */
+.dot:hover {
+    fill-opacity: 1;
+    stroke: var(--brown-dark);
+    stroke-width: 2px;
 }
 
 .year-filter select {
